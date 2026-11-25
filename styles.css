@@ -1,0 +1,60 @@
+:root{
+  --bg:#f2f5f7; --surface:#fff; --ink:#1b2733; --muted:#5a6b7a; --line:#d5dde3;
+  --accent:#1d6b74; --accent-ink:#fff; --soft:#e3f0f1;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121a20; --surface:#1a252d; --ink:#e8eef2; --muted:#9fb0bd; --line:#2d3b46; --accent:#5cc0cb; --accent-ink:#0c1a1d; --soft:#1f3a3f;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.25rem 4rem}
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+header.top .wrap{display:flex;gap:1.5rem;align-items:center;justify-content:space-between;padding-bottom:0;flex-wrap:wrap}
+.marca{font-weight:700;font-size:1.1rem;padding:1rem 0}
+nav{display:flex;gap:.25rem}
+nav a{padding:1rem .9rem;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent}
+nav a[aria-current="page"]{color:var(--ink);border-color:var(--accent);font-weight:700}
+nav a:hover{color:var(--ink)}
+h1{font-size:1.8rem;line-height:1.2;margin:2rem 0 .4rem}
+.intro{color:var(--muted);margin:0 0 1.5rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+fieldset.cat{border:1px solid var(--line);background:var(--surface);border-radius:10px;margin:0 0 1rem;padding:.4rem 1rem .8rem}
+fieldset.cat legend{font-weight:700;font-size:1.1rem;padding:0 .4rem}
+.opcion{display:flex;align-items:center;gap:.6rem;padding:.35rem 0}
+.opcion input{width:1.2rem;height:1.2rem;accent-color:var(--accent);flex:none}
+.opcion label{cursor:pointer}
+
+.tip-wrap{position:relative;display:inline-flex}
+.tip-btn{width:1.5rem;height:1.5rem;border-radius:50%;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font:italic 700 .85rem Georgia,serif;cursor:pointer;padding:0}
+.tip-btn:hover,.tip-wrap.abierto .tip-btn{background:var(--accent);color:var(--accent-ink)}
+.tip{display:none;position:absolute;z-index:5;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:max-content;max-width:min(300px,80vw);background:var(--ink);color:var(--bg);padding:.6rem .8rem;border-radius:8px;font-size:.92rem;line-height:1.45}
+.tip-wrap:hover .tip,.tip-wrap:focus-within .tip,.tip-wrap.abierto .tip{display:block}
+@media (max-width:520px){.tip-wrap{position:static}.tip{left:1rem;right:1rem;transform:none;width:auto;max-width:none}}
+
+.acciones{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
+button.btn{font:inherit;font-weight:700;padding:.65rem 1.2rem;border-radius:8px;border:1.5px solid var(--accent);cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+button.btn.sec{background:transparent;color:var(--accent)}
+button.btn:hover{filter:brightness(1.08)}
+.salida{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem}
+.salida h2{font-size:1.05rem;margin:0 0 .6rem}
+textarea{width:100%;min-height:12rem;font:inherit;font-size:.98rem;padding:.7rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+.salida .btn{margin-top:.7rem}
+
+.buscador{position:sticky;top:0;background:var(--bg);padding:.8rem 0;z-index:3}
+.buscador input{width:100%;font:inherit;padding:.75rem 1rem;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink)}
+#contador{color:var(--muted);font-size:.9rem;min-height:1.3rem;margin:.3rem 0 0}
+details.cat{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:.8rem}
+details.cat>summary{font-weight:700;font-size:1.1rem;padding:.9rem 1rem}
+details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--accent);font-weight:700;font-size:1.3rem;line-height:1}
+details[open]>summary::after{content:"–"}
+.hijos{padding:0 1rem 1rem}
+details.opt{border-top:1px solid var(--line)}
+details.opt>summary{padding:.7rem 0;font-weight:400}
+details.opt[open]>summary{font-weight:700}
+details.opt p{margin:0 0 .9rem;padding:.7rem .9rem;background:var(--soft);border-radius:8px}
+.aviso{padding:1rem;border-radius:8px;background:var(--soft)}
+[hidden]{display:none!important}

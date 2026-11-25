@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="marca">Nombre del proyecto</span>
+  <nav aria-label="Principal">
+    <a href="index.html" aria-current="page">Formulario</a>
+    <a href="info.html">Información</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<h1>Formulario</h1>
+<p class="intro">Marca las opciones que quieras y genera el texto. Pulsa la <em>i</em> de cada opción para ver su descripción.</p>
+<form id="form" onsubmit="return false">
+  <div id="categorias"><p class="aviso">Cargando…</p></div>
+  <div class="acciones">
+    <button type="button" class="btn" id="generar">Generar texto</button>
+    <button type="button" class="btn sec" id="limpiar">Limpiar selección</button>
+  </div>
+</form>
+<section class="salida" hidden aria-live="polite">
+  <h2>Texto generado</h2>
+  <textarea id="resultado" readonly></textarea>
+  <button type="button" class="btn" id="copiar">Copiar texto</button>
+</section>
+</main>
+<script src="app.js"></script>
+<script>initForm()</script>
+</body></html>

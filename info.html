@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Información</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <span class="marca">Nombre del proyecto</span>
+  <nav aria-label="Principal">
+    <a href="index.html">Formulario</a>
+    <a href="info.html" aria-current="page">Información</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<h1>Información</h1>
+<p class="intro">Todas las categorías y opciones con su descripción. Usa el buscador para acotar.</p>
+<div class="buscador">
+  <input id="buscar" type="search" placeholder="Buscar por nombre o descripción" aria-label="Buscar" autocomplete="off">
+  <p id="contador" aria-live="polite"></p>
+</div>
+<div id="lista"><p class="aviso">Cargando…</p></div>
+</main>
+<script src="app.js"></script>
+<script>initInfo()</script>
+</body></html>
