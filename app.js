@@ -110,12 +110,11 @@ async function initForm() {
 
   const out = document.getElementById("resultado");
   document.getElementById("generar").addEventListener("click", () => {
-    const parts = [];
-    data.forEach(c => {
-      const sel = c.opciones.filter(o => document.getElementById("chk-" + o.id).checked);
-      if (sel.length) parts.push(sel.map(o => "- " + o.nombre).join(""));
-    });
-    out.value = parts.join("\n\n") || "No has marcado ninguna opción.";
+    const sel = [];
+    data.forEach(c => c.opciones.forEach(o => {
+      if (document.getElementById("chk-" + o.id).checked) sel.push(o.nombre.replace(/[.\s]+$/, ""));
+    }));
+    out.value = sel.length ? sel.join(". ") + "." : "No has marcado ninguna opción.";
     out.parentElement.hidden = false;
   });
   document.getElementById("limpiar").addEventListener("click", () => {
