@@ -30,8 +30,12 @@ fieldset.cat legend{font-weight:700;font-size:1.1rem;padding:0 .4rem}
 .tip-btn{width:1.5rem;height:1.5rem;border-radius:50%;border:1.5px solid var(--accent);background:transparent;color:var(--accent);font:italic 700 .85rem Georgia,serif;cursor:pointer;padding:0}
 .tip-btn:hover,.tip-wrap.abierto .tip-btn{background:var(--accent);color:var(--accent-ink)}
 .tip{display:none;position:absolute;z-index:5;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:max-content;max-width:min(300px,80vw);background:var(--ink);color:var(--bg);padding:.6rem .8rem;border-radius:8px;font-size:.92rem;line-height:1.45}
-.tip-wrap:hover .tip,.tip-wrap:focus-within .tip,.tip-wrap.abierto .tip{display:block}
-@media (max-width:520px){.tip-wrap{position:static}.tip{left:1rem;right:1rem;transform:none;width:auto;max-width:none}}
+.tip-wrap.abierto .tip{display:block}
+@media (hover:hover){.tip-wrap:hover .tip,.tip-wrap:focus-within .tip{display:block}}
+@media (max-width:520px){
+  .tip-btn{width:2rem;height:2rem;font-size:1rem}
+  .tip{position:fixed;top:auto;left:1rem;right:1rem;bottom:1rem;transform:none;width:auto;max-width:none;z-index:50;font-size:1rem;padding:.9rem 1rem;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+}
 
 .acciones{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
 button.btn{font:inherit;font-weight:700;padding:.65rem 1.2rem;border-radius:8px;border:1.5px solid var(--accent);cursor:pointer;background:var(--accent);color:var(--accent-ink)}

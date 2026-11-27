@@ -114,7 +114,7 @@ async function initForm() {
     data.forEach(c => c.opciones.forEach(o => {
       if (document.getElementById("chk-" + o.id).checked) sel.push(o.nombre.replace(/[.\s]+$/, ""));
     }));
-    out.value = sel.length ? sel.join(". ") + "." : "No has marcado ninguna opción.";
+    out.value = sel.length ? sel.join(". ") : "No has marcado ninguna opción.";
     out.parentElement.hidden = false;
   });
   document.getElementById("limpiar").addEventListener("click", () => {
