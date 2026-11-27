@@ -113,7 +113,7 @@ async function initForm() {
     const parts = [];
     data.forEach(c => {
       const sel = c.opciones.filter(o => document.getElementById("chk-" + o.id).checked);
-      if (sel.length) parts.push(c.nombre + ":\n" + sel.map(o => "- " + o.nombre).join("\n"));
+      if (sel.length) parts.push(sel.map(o.nombre).join("."));
     });
     out.value = parts.join("\n\n") || "No has marcado ninguna opción.";
     out.parentElement.hidden = false;
