@@ -34,7 +34,7 @@ fieldset.cat legend{font-weight:700;font-size:1.1rem;padding:0 .4rem}
 @media (hover:hover){.tip-wrap:hover .tip,.tip-wrap:focus-within .tip{display:block}}
 @media (max-width:520px){
   .tip-btn{width:2rem;height:2rem;font-size:1rem}
-  .tip{position:fixed;top:auto;left:1rem;right:1rem;bottom:1rem;transform:none;width:auto;max-width:none;z-index:50;font-size:1rem;padding:.9rem 1rem;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+  .tip{position:fixed;top:auto;left:1rem;right:1rem;bottom:1rem;transform:none;width:auto;max-width:none;z-index:9999999999;font-size:1rem;padding:.9rem 1rem;box-shadow:0 6px 24px rgba(0,0,0,.35)}
 }
 
 .acciones{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
